@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Burpple</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="type_main_title">A Tasty Walk In A Park</string>
+    <string name="type_sub_title">Savourworld puts 20 resturants together \n on the science park map.</string>
+</resources>

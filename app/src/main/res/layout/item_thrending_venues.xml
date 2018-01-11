@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_margin="4dp"
+    android:layout_height="50dp"
+    >
+
+
+    <ImageView
+        android:id="@+id/iv_foodshop_venues"
+        android:layout_width="30dp"
+        android:layout_margin="4dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img_food_shop_4" />
+
+
+    <TextView
+        android:id="@+id/tv_foodshop_venues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_foodshop_venues"
+        android:text="Sushi Kimura"
+        android:textColor="@color/black_full"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

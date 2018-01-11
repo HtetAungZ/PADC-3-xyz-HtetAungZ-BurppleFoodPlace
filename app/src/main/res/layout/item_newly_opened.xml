@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_margin="4dp"
+    android:layout_height="50dp"
+    >
+
+
+            <ImageView
+                android:id="@+id/iv_foodshop_newly"
+                android:layout_width="30dp"
+                android:layout_margin="4dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img_food_shop_1" />
+
+
+    <TextView
+        android:id="@+id/tv_foodshop_newly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_foodshop_newly"
+        android:text="Sushi Kimura"
+        android:textColor="@color/black_full"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+
+
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_foodshop_image_2"-->
+                <!--android:layout_width="70dp"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:layout_alignLeft="@id/iv_foodshop_image_1"-->
+                <!--android:layout_below="@id/iv_foodshop_image_1"-->
+                <!--android:src="@drawable/img_food_shop_2" />-->
+
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignStart="@+id/tv_foodshop_1"-->
+            <!--android:layout_alignTop="@+id/iv_foodshop_image_2"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="Nesuto"-->
+            <!--android:textColor="@color/black_full"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textStyle="bold" />-->
+
+
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_foodshop_image_3"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:layout_alignLeft="@id/iv_foodshop_image_1"-->
+            <!--android:layout_below="@id/iv_foodshop_image_2"-->
+            <!--android:src="@drawable/img_food_shop_3" />-->
+
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignStart="@+id/tv_foodshop_1"-->
+            <!--android:layout_alignTop="@+id/iv_foodshop_image_3"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="Misato"-->
+            <!--android:textColor="@color/black_full"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textStyle="bold" />-->
+
+
+
+
+    </RelativeLayout>
+

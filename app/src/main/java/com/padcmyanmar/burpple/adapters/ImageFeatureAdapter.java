@@ -15,6 +15,8 @@ import com.padcmyanmar.burpple.viewitems.ImageFeatureViewItem;
  */
 
 public class ImageFeatureAdapter extends PagerAdapter {
+
+
     @Override
     public int getCount() {
         return 4;
@@ -39,12 +41,10 @@ public class ImageFeatureAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
 
-        container.removeView((View)object);
+        container.removeView((View) object);
 
 
     }
-
-
 
 
 }

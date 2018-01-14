@@ -2,6 +2,7 @@ package com.padcmyanmar.burpple.data.models;
 
 import com.padcmyanmar.burpple.network.FeaturedDataAgent;
 import com.padcmyanmar.burpple.network.OkHttpFeaturedDataAgent;
+import com.padcmyanmar.burpple.network.responses.RetrofitFeaturedDataAgent;
 
 /**
  * Created by ICE on 12-01-2018.
@@ -14,8 +15,8 @@ private FeaturedDataAgent mfeaturedDataAgent;
 
     private FeaturedModel() {
 
-        mfeaturedDataAgent= OkHttpFeaturedDataAgent.getObjectInstance();
-
+    //   mfeaturedDataAgent= OkHttpFeaturedDataAgent.getObjectInstance();
+        mfeaturedDataAgent= RetrofitFeaturedDataAgent.getsObjInstance();
     }
 
     public static FeaturedModel getsObjInstance()
@@ -27,9 +28,12 @@ private FeaturedDataAgent mfeaturedDataAgent;
         return sObjInstance;
     }
 
-    public void LoadFeatures(){
+    public void loadFeatures(){
 
         mfeaturedDataAgent.loadFeatured();
     }
+
+
+
 
 }

@@ -14,8 +14,11 @@ import com.padcmyanmar.burpple.adapters.ImageFeatureAdapter;
 import com.padcmyanmar.burpple.adapters.NewlyOpenAdapter;
 import com.padcmyanmar.burpple.adapters.PromotionAdapter;
 import com.padcmyanmar.burpple.adapters.ThrendingVenuesAdapter;
+import com.padcmyanmar.burpple.data.models.FeaturedModel;
+import com.padcmyanmar.burpple.data.models.GuidesModel;
 import com.padcmyanmar.burpple.data.models.PromotionsModel;
 import com.padcmyanmar.burpple.events.LoadedFeaturedEvent;
+import com.padcmyanmar.burpple.events.LoadedGuidesEvent;
 import com.padcmyanmar.burpple.events.LoadedPromotionsEvent;
 import com.padcmyanmar.burpple.viewholders.NewlyOpenViewHolder;
 import com.padcmyanmar.burpple.viewholders.ThrendingVenuesViewHolder;
@@ -90,6 +93,9 @@ public class BurppleActivity extends AppCompatActivity {
         rvThrendingVenues.setAdapter(mthrendingVenuesAdapter);
 
         PromotionsModel.getsObjInstance().loadPromotions();
+        FeaturedModel.getsObjInstance().loadFeatures();
+        GuidesModel.getsObjInstance().loadGuides();
+
 
     }
 
@@ -106,17 +112,26 @@ public class BurppleActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
-//    @Subscribe(threadMode = ThreadMode.MAIN)
-//    public void onFeaturedLoaded(LoadedFeaturedEvent event) {
-//        Log.d(BurppleFoodApp.Log_Tag, "onNewsLoaded :" + event.getFeaturedList().size());
-//        ImageFeatureViewItem.setNews(event.getNewsList());
-//    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onFeaturedLoaded(LoadedFeaturedEvent event) {
+        Log.d(BurppleFoodApp.Log_Tag, "onFeaturedLoaded :" + event.getFeaturedList().size());
+        mimageFeatureAdapter.setFeatured(event.getFeaturedList());
+    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onPromotionsLoaded(LoadedPromotionsEvent event) {
         Log.d(BurppleFoodApp.Log_Tag, "onPromotionsLoaded :" + event.getPromotionList().size());
         mpromotionAdapter.setPromotions(event.getPromotionList());
     }
+
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onGuidesLoaded(LoadedGuidesEvent event) {
+        Log.d(BurppleFoodApp.Log_Tag, "onGuidesLoaded :" + event.getGuidesList().size());
+        mburppleGuideAdapter.setGuides(event.getGuidesList());
+    }
+
 
 
 }

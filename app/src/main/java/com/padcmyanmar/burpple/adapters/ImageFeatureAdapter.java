@@ -8,7 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.padcmyanmar.burpple.R;
+import com.padcmyanmar.burpple.data.vo.FeaturedVo;
 import com.padcmyanmar.burpple.viewitems.ImageFeatureViewItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ICE on 05-01-2018.
@@ -16,10 +20,16 @@ import com.padcmyanmar.burpple.viewitems.ImageFeatureViewItem;
 
 public class ImageFeatureAdapter extends PagerAdapter {
 
+    private List<FeaturedVo> mFeaturedList;
+
+    public ImageFeatureAdapter() {
+
+        mFeaturedList = new ArrayList<>();
+    }
 
     @Override
     public int getCount() {
-        return 4;
+        return mFeaturedList.size();
     }
 
     @Override
@@ -32,8 +42,11 @@ public class ImageFeatureAdapter extends PagerAdapter {
         Context context = container.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         ImageFeatureViewItem view = (ImageFeatureViewItem) layoutInflater.inflate(R.layout.item_feature_image, container, false);
+        view.setImage(mFeaturedList.get(position).getBurppleFeaturedImage());
+        view.setMainTitle(mFeaturedList.get(position).getBurppleFeaturedTitle());
+        view.setSubTitle(mFeaturedList.get(position).getBurppleFeaturedDesc());
+        view.setTag(mFeaturedList.get(position).getBurppleFeaturedTag());
         container.addView(view);
-
         return view;
 
     }
@@ -43,6 +56,12 @@ public class ImageFeatureAdapter extends PagerAdapter {
 
         container.removeView((View) object);
 
+
+    }
+
+    public void setFeatured(List<FeaturedVo> featuredList) {
+        mFeaturedList = featuredList;
+        notifyDataSetChanged();
 
     }
 

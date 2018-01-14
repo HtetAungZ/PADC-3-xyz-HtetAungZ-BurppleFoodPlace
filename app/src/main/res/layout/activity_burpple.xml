@@ -65,8 +65,13 @@
             </RelativeLayout>
 
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
 
+        </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -195,8 +200,9 @@
 
             <LinearLayout
                 android:id="@+id/ll_news_and_thrending"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:layout_below="@id/tv_news_and_thrending"
                 android:orientation="horizontal"
                 android:weightSum="2">
@@ -206,7 +212,7 @@
                     android:id="@+id/cv_newly_open"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
+                    android:layout_gravity="left"
                     android:layout_margin="12dp"
                     android:layout_weight="1"
 
@@ -236,7 +242,7 @@
 
                         <View
                             android:id="@+id/view_line_newly_open"
-                            android:layout_width="150dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="1dp"
                             android:layout_below="@id/rv_newly_open" />
 
@@ -266,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/tv_news_and_thrending"
-                    android:layout_gravity="top|right"
+                    android:layout_gravity="right"
                     android:layout_margin="12dp"
                     android:layout_weight="1">
 
@@ -295,7 +301,7 @@
 
                         <View
                             android:id="@+id/view_thrending_venues"
-                            android:layout_width="150dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="1dp"
                             android:layout_below="@id/rv_thrending_venues" />
 

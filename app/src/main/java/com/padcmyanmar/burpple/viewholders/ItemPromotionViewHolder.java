@@ -20,8 +20,12 @@ import butterknife.ButterKnife;
 
 public class ItemPromotionViewHolder extends RecyclerView.ViewHolder {
 
+
     @BindView(R.id.iv_food_detail)
     ImageView ivFoodDetail;
+
+    @BindView(R.id.tv_promotion_title)
+    TextView tvPromotionTitle;
 
     @BindView(R.id.tv_exclusive)
     TextView tvExclusive;
@@ -46,9 +50,11 @@ public class ItemPromotionViewHolder extends RecyclerView.ViewHolder {
     public void setPromotions(PromotionsVo promotions)
     {
 
+
         tvDueDate.setText(promotions.getBurpplePromotionUntil());
         tvIngeridents.setText(promotions.getBurpplePromotionShop().getBurppleShopName());
         tvShopArea.setText(promotions.getBurpplePromotionShop().getBurppleShopArea());
+        tvPromotionTitle.setText(promotions.getBurpplePromotionTitle());
 
         Glide.with(ivFoodDetail.getContext())
                 .load(promotions.getBurpplePromotionImage())
